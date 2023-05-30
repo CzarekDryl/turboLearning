@@ -1,0 +1,23 @@
+{
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "app:ui": "yarn workspace ui",
+    "app:web": "yarn workspace web",
+    "app:docs": "yarn workspace docs"
+  },
+  "devDependencies": {
+    "eslint": "^7.32.0",
+    "eslint-config-custom": "*",
+    "prettier": "^2.5.1",
+    "turbo": "canary"
+  },
+  "packageManager": "yarn@1.22.19"
+}

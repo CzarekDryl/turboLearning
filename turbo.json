@@ -1,0 +1,25 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "globalDependencies": ["**/.env.*local"],
+  "pipeline": {
+    "build": {
+      "dependsOn": ["^build"]
+    },
+    "docs#build": {
+      "dependsOn": ["ui#build"],
+      "outputs": ["storybook-static/**"]
+    },
+    "web#build": {
+      "dependsOn": ["ui#build"],
+      "outputs": [".next/**"]
+    },
+    "ui#build": {
+      "inputs": ["src/**"],
+      "outputs": ["lib/**"]
+    },
+    "lint": {},
+    "dev": {
+      "cache": false
+    }
+  }
+}
